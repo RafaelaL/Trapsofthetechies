@@ -1,6 +1,6 @@
 # Purpose:
 #
-# Author:      Rafael Klynger e Faela Lacerda
+# Author:      Rafael Klynger e Rafaela Lacerda
 #
 # Created:     15/08/2014
 # Copyright:   (c) Rafael 2014
@@ -36,18 +36,19 @@ while gameLoop:
 	
 	
 	# Checa qual sera a animacao
+	# Run
 	if player1.pos == player1.velocity:
 		screen.blit(player1.img_running_R, (player1.x, player1.y))
 	elif player1.pos == - player1.velocity:
 		screen.blit(player1.img_running_L, (player1.x, player1.y))
-	
+	# Shot
 	elif player1.shot:
 		player1.shot_now()
 		if player1.previous_pos == player1.velocity:
 			screen.blit(player1.img_shotting_R, (player1.x, player1.y))
 		elif player1.previous_pos == - player1.velocity:
 			screen.blit(player1.img_shotting_L, (player1.x, player1.y))
-	
+	#Stand by
 	else:
 		if player1.previous_pos == - player1.velocity:
 			screen.blit(player1.img_stand_by_L, (player1.x, player1.y))
